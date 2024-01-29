@@ -8,9 +8,9 @@ const app = express();
 // Middleware for parsing request body
 app.use(express.json());
 
-app.get(`/`, (request, respons)=> {
+app.get(`/`, (request, response)=> {
     console.log(request)
-    return respons.status(234).send(`Välkommen till MERN stack övning`)
+    return response.status(234).send(`Välkommen till MERN stack övning`)
 });
 
 // Route for Save a new Book
@@ -70,6 +70,53 @@ app.get('/books/:id', async (request, response) => {
         response.status(500).send({ message: error.message});    
     }
 });
+
+// Route for update a book
+app.put('/books/:id', async (request, response) => {
+    try {
+        if (
+            !request.body.title ||
+            !request.body.author ||
+            !request.body.publishYear
+        ) {
+            return response.status(400).send({
+                message:'Send all required fields: title, author, publishYear',
+            });
+        }
+        const { id } = request.params;
+        
+        const result = await Book.findByIdAndUpdate(id, request.body);
+
+        if (!result) {
+            return response.status(404).json({ message: 'Book not found'});
+        }
+
+        return response.status(200).send({ message: 'Book updated successfully' });
+        
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });   
+    }
+})
+
+// Route for delete book by id
+app.delete('/books/:id', async (request, response) => {
+    try {
+        const { id } = request.params;
+
+        const result = await Book.findByIdAndDelete(id);
+
+        if (!result) {
+            return response.status(404).json({ message: 'Book not found'});
+        }
+
+        return response.status(200).send({ message: 'Book deleted successfully' });
+
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });    
+    }
+})
 
 
 mongoose

@@ -19,6 +19,25 @@ Content-type: application/json
 
 // === get book by id ===
 
-GET http://localhost:5555/books/65b7d70abb2190dd0c4910d7
+GET http://localhost:5555/books/65b7d741bb2190dd0c4910d9
+
+###
+
+// === update book ===
+
+PUT http://localhost:5555/books/65b7d741bb2190dd0c4910d9
+Content-Type: application/json
+
+{
+    "title": "My book 2 updated",
+    "author": "Olga Gustafsson",
+    "publishYear": 2024
+}
+
+###
+
+// === delete book by id ===
+
+DELETE http://localhost:5555/books/65b7d78cbb2190dd0c4910db
 
 ###
