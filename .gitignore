@@ -3,6 +3,6 @@ package-lock.json
 package.json
 config.js
 
-test.rest
+books.rest
 
 .DS_Store
