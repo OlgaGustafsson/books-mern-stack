@@ -1,0 +1,8 @@
+node_modules
+package-lock.json
+package.json
+config.js
+
+test.rest
+
+.DS_Store

@@ -1,0 +1,24 @@
+// === get books ===
+
+GET http://localhost:5555/books
+
+###
+
+// === post books ===
+
+POST http://localhost:5555/books 
+Content-type: application/json
+
+{
+    "title": "My first book",
+    "author": "Olga Gustafsson",
+    "publishYear": 2024
+}
+
+###
+
+// === get book by id ===
+
+GET http://localhost:5555/books/65b7d70abb2190dd0c4910d7
+
+###
