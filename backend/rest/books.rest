@@ -10,7 +10,7 @@ POST http://localhost:5555/books
 Content-type: application/json
 
 {
-    "title": "My first book",
+    "title": "My book 5",
     "author": "Olga Gustafsson",
     "publishYear": 2024
 }
@@ -25,11 +25,11 @@ GET http://localhost:5555/books/65b7d741bb2190dd0c4910d9
 
 // === update book ===
 
-PUT http://localhost:5555/books/65b7d741bb2190dd0c4910d9
+PUT http://localhost:5555/books/65b7d70abb2190dd0c4910d7
 Content-Type: application/json
 
 {
-    "title": "My book 2 updated",
+    "title": "My first book",
     "author": "Olga Gustafsson",
     "publishYear": 2024
 }
