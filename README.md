@@ -10,18 +10,28 @@ Tailwind CSS
 
 Axios
 
-#### Starta projektet:
+### För att starta projektet:
 
-Gå till backend-mappen:
+1. Gå in i backend-mappen 
 
+```
 cd backend
+```
+```
 npm run start
+```
+2. Gå in i projekt-mappen 
 
-Gå tillbaka till projekt-mappen:
-
+```
 cd ..
- 
-sedan till frontend-mappen:
+```
+3. Gå in i frontend-mappen
 
+```
 cd frontend
+```
+```
 npm run dev
+```
+
+
